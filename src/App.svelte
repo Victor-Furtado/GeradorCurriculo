@@ -1,34 +1,68 @@
 <script lang="ts">
-    import Header from "./lib/partials/Header.svelte";
-    import Footer from "./lib/partials/Footer.svelte";
+    import Header from "@lib/partials/Header.svelte";
+    import Footer from "@lib/partials/Footer.svelte";
 
-    import Button from "./lib/components/Button.svelte";
-    import Card from "./lib/components/Card.svelte";
-    import TextInput from "./lib/components/TextInput.svelte";
+    import Button from "@lib/components/Button.svelte";
+    import Card from "@lib/components/Card.svelte";
+    import TextInput from "@lib/components/TextInput.svelte";
 
-    import UserDocIcon from "./assets/userdoc.icon.svg";
-    import LinkDocIcon from "./assets/linkdoc.icon.svg";
-    import UpDocIcon from "./assets/updoc.icon.svg";
-    import TargetDocIcon from "./assets/targetdoc.icon.svg";
-    import RibbonDocIcon from "./assets/ribbondoc.icon.svg";
-    import WorkDocIcon from "./assets/workdoc.icon.svg";
-    import SaveDocIcon from "./assets/savedoc.icon.svg";
+    import form from "@lib/forms/default.json";
+
+    const imgs: Record<string, { default: any }> = import.meta.glob(
+        "@assets/*.svg",
+        {
+            eager: true,
+        },
+    );
+
+    function onSubmit(e: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement; }) {
+        const formData = new FormData(e.currentTarget);
+
+        const data: Record<string, any> = {};
+        for (let field of formData) {
+            const [key, value] = field;
+            data[key] = value;
+        }
+        console.log(data);
+    }
 </script>
 
 <Header />
-<form class="form">
-    <Card title="Informações Básicas" icon={UserDocIcon}>
-        <TextInput name="nome" />
-        <TextInput name="email" inputType="email" />
-        <TextInput name="telefone" inputType="tel" />
-    </Card>
-
-    <Card title="Links de Portifólio" icon={LinkDocIcon}></Card>
-    <Card title="Competências" icon={UpDocIcon}></Card>
-    <Card title="Objetivo" icon={TargetDocIcon}></Card>
-    <Card title="Formação" icon={RibbonDocIcon}></Card>
-    <Card title="Experiências" icon={WorkDocIcon}></Card>
-    <Card title="Salvar Currículo" icon={SaveDocIcon}>
+<form class="form" on:submit|preventDefault={onSubmit}>
+    {#each form as { icon, inputs, title }}
+        <Card {title} icon={imgs[`/src/assets/${icon}`].default}>
+            {#each inputs as input}
+                <TextInput
+                    name={input.name}
+                    label={input.label}
+                    inputType={input.type}
+                />
+            {/each}
+        </Card>
+    {/each}
+    <Card
+        title="Salvar Currículo"
+        icon={imgs["/src/assets/savedoc.icon.svg"].default}
+    >
+        <div class="button-wrapper">
+            <Button
+                type="submit"
+                icon={imgs["/src/assets/pdfdoc.icon.svg"].default}
+                variant="success">SALVAR PDF</Button
+            >
+            <Button
+                icon={imgs["/src/assets/closedoc.icon.svg"].default}
+                variant="primary">IMPORTAR DADOS</Button
+            >
+            <Button
+                icon={imgs["/src/assets/exportdoc.icon.svg"].default}
+                variant="warning">EXPORTAR DADOS</Button
+            >
+            <Button
+                icon={imgs["/src/assets/pendoc.icon.svg"].default}
+                variant="danger">LIMPAR CURRÍCULO</Button
+            >
+        </div>
     </Card>
 </form>
 <Footer />

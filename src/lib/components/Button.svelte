@@ -1,10 +1,13 @@
 <script lang="ts">
-    export let icon: string;
-    export let variant: "primary" | "success" | "warning" | "danger" = "primary";
+    export let icon: string | null = null;
+    export let variant: "primary" | "success" | "warning" | "danger" =
+        "primary";
 </script>
 
-<button class="btn {variant}" {...$$restProps} >
-    <img src={icon} alt={`ícone de ${icon}`} height="32">
+<button class="btn {variant}" {...$$restProps}>
+    {#if !!icon}
+        <img src={icon} alt={`Ícone de botão`} height="32" />
+    {/if}
     <slot />
     <div />
 </button>
@@ -46,7 +49,7 @@
     .btn:hover {
         border-color: var(--color-highlight);
     }
-  
+
     .btn:focus,
     .btn:focus-visible {
         outline: 4px auto -webkit-focus-ring-color;

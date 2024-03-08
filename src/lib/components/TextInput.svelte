@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { textInputTypes } from "../types/inputType";
+    import type { textInputTypes } from "../utils";
 
     export let name: string;
     export let label: string = name;
-    export let inputType: textInputTypes = "text"
+    export let inputType: textInputTypes | string = "text"
 </script>
 
 <div class="wrapper">

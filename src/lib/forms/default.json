@@ -1,0 +1,45 @@
+[
+    {
+        "title": "Informações Básicas",
+        "icon": "userdoc.icon.svg",
+        "inputs": [
+            {
+                "name": "nome"
+            },
+            {
+                "name": "email",
+                "type": "email"
+            },
+            {
+                "name": "telefone",
+                "type": "tel",
+                "label": "telefone"
+            }
+        ]
+    },
+    {
+        "title": "Links de Portifólio",
+        "icon": "linkdoc.icon.svg",
+        "inputs": []
+    },
+    {
+        "title": "Competências",
+        "icon": "updoc.icon.svg",
+        "inputs": []
+    },
+    {
+        "title": "Objetivo",
+        "icon": "targetdoc.icon.svg",
+        "inputs": []
+    },
+    {
+        "title": "Formação",
+        "icon": "ribbondoc.icon.svg",
+        "inputs": []
+    },
+    {
+        "title": "Experiências",
+        "icon": "workdoc.icon.svg",
+        "inputs": []
+    }
+]
