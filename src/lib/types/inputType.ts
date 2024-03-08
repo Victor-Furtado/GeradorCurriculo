@@ -1,0 +1,1 @@
+export type textInputTypes = "email" | "password" | "tel" | "text" | "url" | "search" | "date"
