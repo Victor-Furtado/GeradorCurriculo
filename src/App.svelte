@@ -2,11 +2,15 @@
     import Header from "./lib/partials/Header.svelte";
     import Footer from "./lib/partials/Footer.svelte";
 
-    import UserDocIcon from "./assets/userdoc.icon.svg";
-    import LinkDocIcon from "./assets/linkdoc.icon.svg";
-
     import Card from "./lib/components/Card.svelte";
     import TextInput from "./lib/components/TextInput.svelte";
+
+    import UserDocIcon from "./assets/userdoc.icon.svg";
+    import LinkDocIcon from "./assets/linkdoc.icon.svg";
+    import UpDocIcon from "./assets/updoc.icon.svg";
+    import TargetDocIcon from "./assets/targetdoc.icon.svg";
+    import RibbonDocIcon from "./assets/ribbondoc.icon.svg";
+    import WorkDocIcon from "./assets/workdoc.icon.svg";
 </script>
 
 <Header />
@@ -18,8 +22,11 @@
         <TextInput name="telefone" inputType="tel" />
     </Card>
 
-    <Card title="Links de Portifólio" icon={LinkDocIcon}>
-    </Card>
+    <Card title="Links de Portifólio" icon={LinkDocIcon}></Card>
+    <Card title="Competências" icon={UpDocIcon}></Card>
+    <Card title="Objetivo" icon={TargetDocIcon}></Card>
+    <Card title="Formação" icon={RibbonDocIcon}></Card>
+    <Card title="Experiências" icon={WorkDocIcon}></Card>
 
 </form>
 <Footer />

@@ -6,9 +6,9 @@
 <div class="card">
     <div class="card-header">
         {#if !!icon}
-            <img src={icon} alt={`${title} icon`}>
+            <img src={icon} alt={`Ícone de ${title}`} height="20" />
         {/if}
-        {title}
+        <p>{title}</p>
     </div>
     <p class="card-body">
         <slot />
@@ -25,6 +25,9 @@
     }
 
     .card-header {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
         border-radius: 2rem 2rem 0 0;
         padding: 0.5rem 1.2rem;
         background-color: var(--color-surface-1);
