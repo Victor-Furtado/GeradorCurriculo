@@ -26,6 +26,9 @@
     --color-surface-3: #203860;
   
     --color-brand: #00bbf0;
+    --color-success: #00f094;
+    --color-warning: #f0e000;
+    --color-danger: #f00048;
   
     --color-text: #0d0d0d;
     --color-text-contrast: #f2f2f2;
@@ -38,6 +41,9 @@
       --color-surface-2: #393e46;
   
       --color-brand: #005792;
+      --color-success: #00945b;
+      --color-warning: #948a00;
+      --color-danger: #94002c;
   
       --color-text: #f2f2f2;
       --color-text-contrast: #0d0d0d;
@@ -55,27 +61,4 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  
-  button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: var(--color-brand);
-    cursor: pointer;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  
-  button:hover {
-    filter: drop-shadow(0 0 1em var(--color-highlight));
-    border-color: var(--color-highlight);
-  }
-  
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
   }

@@ -13,7 +13,7 @@
 
 <style>
     .wrapper {
-        border-radius: 2rem;
+        border-radius: 8px;
         margin: 1rem 0;
         padding: 0 1rem;
         background-color: var(--color-text);
@@ -22,7 +22,6 @@
     .wrapper label {
         text-transform:capitalize;
         text-align: center;
-        padding-left: .5rem;
     }
 
     .wrapper * {

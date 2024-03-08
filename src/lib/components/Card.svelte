@@ -17,18 +17,25 @@
 
 <style>
     .card {
-        min-width: 300;
-        height: fit-content;
-        border-radius: 2rem;
+        border-radius: 8px;
         /* padding: .5rem .8rem; */
         background-color: var(--color-surface-3);
+
+        will-change: filter;
+        transition: filter 300ms;
+    }
+
+    .card:has(*:focus),
+    .card:has(*:focus-visible),
+    .card:hover {
+        filter: drop-shadow(0 0 1em var(--color-highlight));
     }
 
     .card-header {
         display: flex;
         align-items: center;
-        gap: .5rem;
-        border-radius: 2rem 2rem 0 0;
+        gap: 0.5rem;
+        border-radius: 8px 8px 0 0;
         padding: 0.5rem 1.2rem;
         background-color: var(--color-surface-1);
     }
