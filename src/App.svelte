@@ -39,10 +39,12 @@
     {#each form as { icon, inputs, title }}
         <Card {title} icon={imgs[`/src/assets/${icon}`].default}>
             {#each inputs as input}
-                {#if input.type === "keyvalArray"}
+                {#if input.type?.includes("Array")}
                     <ArrInput
+                        inputType={input.type}
                         name={input.name}
                         label={input.label}
+                        placeholder={input.conf?.placeholder}
                         icon={imgs[`/src/assets/${input.conf?.icon}`].default}
                     />
                 <!-- {:else if input.type === "textArea"} -->

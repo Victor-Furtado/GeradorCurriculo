@@ -29,18 +29,27 @@
         "title": "Links de Portifólio",
         "icon": "linkdoc.icon.svg",
         "inputs": [{
-            "type": "keyvalArray",
+            "type": "textArray",
             "name": "links",
             "label": "portifólio",
             "conf": {
-                "icon": "linkadd.icon.svg"
+                "icon": "linkadd.icon.svg",
+                "placeholder": "http://exemplo.com"
             }
         }]
     },
     {
         "title": "Competências",
         "icon": "updoc.icon.svg",
-        "inputs": []
+        "inputs": [{
+            "type": "textArray",
+            "name": "competencias",
+            "label": "competência",
+            "conf": {
+                "icon": "staradd.icon.svg",
+                "placeholder": "Marketing Digital"
+            }
+        }]
     },
     {
         "title": "Formação",

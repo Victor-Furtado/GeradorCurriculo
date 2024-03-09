@@ -3,6 +3,8 @@
 
     export let name: string;
     export let label: string = name;
+    export let placeholder: string = name;
+    export let inputType: "textArray" | string = "textArray";
     export let icon: string | null = null;
 
     let inputArr: string[] = [];
@@ -30,14 +32,14 @@
                         bind:value={input}
                         type="text"
                         class="label"
-                        placeholder="Nome do link"
+                        placeholder={label}
                     />
                 </legend>
                 <input
                     name={`${name}.${input}`}
                     type="text"
                     class="innerInput"
-                    placeholder="http://exemplo.com.br"
+                    {placeholder}
                 />
             </fieldset>
         </div>
