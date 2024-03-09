@@ -6,7 +6,7 @@
 <div class="card">
     <div class="card-header">
         {#if !!icon}
-            <img src={icon} alt={`Ícone de ${title}`} height="20" />
+            <img src={icon} alt={`Ícone de ${title}`} height="20" class="icon" />
         {/if}
         <p>{title}</p>
     </div>

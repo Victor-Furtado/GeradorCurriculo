@@ -18,18 +18,28 @@
         ]
     },
     {
+        "title": "Objetivo",
+        "icon": "targetdoc.icon.svg",
+        "inputs": [{
+            "name": "objetivo",
+            "type": "textarea"
+        }]
+    },
+    {
         "title": "Links de Portifólio",
         "icon": "linkdoc.icon.svg",
-        "inputs": []
+        "inputs": [{
+            "type": "keyvalArray",
+            "name": "links",
+            "label": "portifólio",
+            "conf": {
+                "icon": "linkadd.icon.svg"
+            }
+        }]
     },
     {
         "title": "Competências",
         "icon": "updoc.icon.svg",
-        "inputs": []
-    },
-    {
-        "title": "Objetivo",
-        "icon": "targetdoc.icon.svg",
         "inputs": []
     },
     {

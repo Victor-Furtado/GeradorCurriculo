@@ -1,12 +1,18 @@
 <script lang="ts">
     export let icon: string | null = null;
-    export let variant: "primary" | "success" | "warning" | "danger" =
-        "primary";
+    export let type: "button" | "submit" | "reset" | null | undefined =
+        undefined;
+    export let variant:
+        | "highlight"
+        | "primary"
+        | "success"
+        | "warning"
+        | "danger" = "primary";
 </script>
 
-<button class="btn {variant}" {...$$restProps}>
+<button class="btn {variant}" {type} on:click>
     {#if !!icon}
-        <img src={icon} alt={`Ícone de botão`} height="32" />
+        <img src={icon} alt={`Ícone de botão`} height="32" class="icon" />
     {/if}
     <slot />
     <div />
@@ -44,6 +50,10 @@
 
     .danger {
         background-color: var(--color-danger);
+    }
+
+    .highlight {
+        background-color: var(--color-highlight);
     }
 
     .btn:hover {

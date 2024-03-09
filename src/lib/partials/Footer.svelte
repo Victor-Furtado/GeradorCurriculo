@@ -14,13 +14,13 @@
     <span class="icons">
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <img on:click={github} src={GitHubIcon} alt="github" />
+        <img class="icon" on:click={github} src={GitHubIcon} alt="github" />
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <img on:click={pixModal} src={PixIcon} alt="pix" />
+        <img class="icon" on:click={pixModal} src={PixIcon} alt="pix" />
     </span>
     <p>
-        Victor Furtado <img src={CopyLeftIcon} height="12" alt="copyleft" /> 2022
+        Victor Furtado <img class="icon" src={CopyLeftIcon} height="12" alt="copyleft" /> 2022
     </p>
 </footer>
 

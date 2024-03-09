@@ -2,12 +2,15 @@
     import Header from "@lib/partials/Header.svelte";
     import Footer from "@lib/partials/Footer.svelte";
 
+    import type { ISection } from "@lib/utils";
     import Button from "@lib/components/Button.svelte";
     import Card from "@lib/components/Card.svelte";
     import TextInput from "@lib/components/TextInput.svelte";
+    import ArrInput from "@lib/components/ArrInput.svelte";
 
-    import form from "@lib/forms/default.json";
+    import defaultForm from "@lib/forms/default.json";
 
+    const form: ISection[] = defaultForm as unknown as ISection[];
     const imgs: Record<string, { default: any }> = import.meta.glob(
         "@assets/*.svg",
         {
@@ -15,7 +18,9 @@
         },
     );
 
-    function onSubmit(e: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement; }) {
+    const onSubmit = (
+        e: SubmitEvent & { currentTarget: EventTarget & HTMLFormElement },
+    ) => {
         const formData = new FormData(e.currentTarget);
 
         const data: Record<string, any> = {};
@@ -25,6 +30,8 @@
         }
         console.log(data);
     }
+
+    const reset = () => window.location.reload();
 </script>
 
 <Header />
@@ -32,11 +39,21 @@
     {#each form as { icon, inputs, title }}
         <Card {title} icon={imgs[`/src/assets/${icon}`].default}>
             {#each inputs as input}
-                <TextInput
-                    name={input.name}
-                    label={input.label}
-                    inputType={input.type}
-                />
+                {#if input.type === "keyvalArray"}
+                    <ArrInput
+                        name={input.name}
+                        label={input.label}
+                        icon={imgs[`/src/assets/${input.conf?.icon}`].default}
+                    />
+                <!-- {:else if input.type === "textArea"} -->
+                    <!-- <textarea name={input.name} id={input.name} cols="30" rows="10"></textarea> -->
+                {:else}
+                    <TextInput
+                        name={input.name}
+                        label={input.label}
+                        inputType={input.type}
+                    />
+                {/if}
             {/each}
         </Card>
     {/each}
@@ -51,7 +68,7 @@
                 variant="success">SALVAR PDF</Button
             >
             <Button
-                icon={imgs["/src/assets/closedoc.icon.svg"].default}
+                icon={imgs["/src/assets/pendoc.icon.svg"].default}
                 variant="primary">IMPORTAR DADOS</Button
             >
             <Button
@@ -59,7 +76,9 @@
                 variant="warning">EXPORTAR DADOS</Button
             >
             <Button
-                icon={imgs["/src/assets/pendoc.icon.svg"].default}
+                on:click={reset}
+                type="button"
+                icon={imgs["/src/assets/closedoc.icon.svg"].default}
                 variant="danger">LIMPAR CURRÍCULO</Button
             >
         </div>

@@ -12,5 +12,8 @@
         margin-right: auto;
         margin-bottom: auto;
         margin-left: auto;
+
+        border-radius: 8px;
+        background-color: var(--color-surface-3);
     }
 </style>

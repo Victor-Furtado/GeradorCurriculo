@@ -3,12 +3,16 @@
 
     export let name: string;
     export let label: string = name;
-    export let inputType: textInputTypes | string = "text"
+    export let inputType: textInputTypes | string = "text";
 </script>
 
 <div class="wrapper">
     <label for={name}>{label}</label>
-    <input name={name} id={name} type={inputType} width="100%">
+    {#if inputType === "textarea"}
+        <textarea {name} id={name} rows="10"></textarea>
+    {:else}
+        <input {name} id={name} type={inputType} width="100%" />
+    {/if}
 </div>
 
 <style>
@@ -16,31 +20,42 @@
         border-radius: 8px;
         margin: 1rem 0;
         padding: 0 1rem;
-        background-color: var(--color-text);
+        background-color: white;
     }
 
     .wrapper label {
-        text-transform:capitalize;
+        text-transform: capitalize;
         text-align: center;
     }
 
     .wrapper * {
-        color: var(--color-text-contrast);
+        color: black;
     }
 
     .wrapper input {
         width: 100%;
         border-color: transparent;
-        background-color: var(--color-text);
-        margin-bottom: .5rem;
+        background-color: white;
+        margin-bottom: 0.5rem;
         font-size: large;
     }
 
+    .wrapper textarea {
+        resize: none;
+        width: 100%;
+        border-color: transparent;
+        background-color: white;
+        margin-bottom: 0.5rem;
+        font-size: large;
+    }
+
+    .wrapper textarea:focus,
     .wrapper input:focus {
         outline: 0;
     }
 
-    .wrapper:has(input:focus){
+    .wrapper:has(textarea:focus),
+    .wrapper:has(input:focus) {
         outline: auto;
     }
 </style>
