@@ -16,7 +16,7 @@
 </script>
 
 <div class="wrapper">
-    <Button type="button" on:click={addInput} {icon}>
+    <Button type="button" variant="success" on:click={addInput} {icon}>
         <span class="btn">Adicionar {label}</span>
     </Button>
     {#each inputArr as input, index}
@@ -66,12 +66,12 @@
 
     .input {
         flex: 3;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         background-color: white;
     }
 
     .innerInput {
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         background-color: white;
         color: black;
         width: 95%;
@@ -88,7 +88,7 @@
         position: relative;
         font-size: large;
         color: black;
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         margin-left: 0.5rem;
         padding: 0 0.3rem;
         width: 8rem;

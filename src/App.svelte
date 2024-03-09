@@ -65,19 +65,23 @@
     >
         <div class="button-wrapper">
             <Button
+                disabled={true}
                 type="submit"
                 icon={imgs["/src/assets/pdfdoc.icon.svg"].default}
-                variant="success">SALVAR PDF</Button
+                variant="highlight">SALVAR PDF</Button
             >
             <Button
+                disabled={true}
                 icon={imgs["/src/assets/pendoc.icon.svg"].default}
                 variant="primary">IMPORTAR DADOS</Button
             >
             <Button
+                disabled={true}
                 icon={imgs["/src/assets/exportdoc.icon.svg"].default}
                 variant="warning">EXPORTAR DADOS</Button
             >
             <Button
+                disabled={true}
                 on:click={reset}
                 type="button"
                 icon={imgs["/src/assets/closedoc.icon.svg"].default}

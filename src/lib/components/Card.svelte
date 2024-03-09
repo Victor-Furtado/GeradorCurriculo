@@ -17,7 +17,7 @@
 
 <style>
     .card {
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         /* padding: .5rem .8rem; */
         background-color: var(--color-surface-3);
 
@@ -35,7 +35,7 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        border-radius: 8px 8px 0 0;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
         padding: 0.5rem 1.2rem;
         background-color: var(--color-surface-1);
     }

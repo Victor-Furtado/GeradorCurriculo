@@ -17,6 +17,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --border-radius: 1rem;
   --doc-height: 100%;
 }
 

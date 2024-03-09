@@ -20,7 +20,7 @@
         <img class="icon" on:click={pixModal} src={PixIcon} alt="pix" />
     </span>
     <p>
-        Victor Furtado <img class="icon" src={CopyLeftIcon} height="12" alt="copyleft" /> 2022
+        Victor Furtado <img class="icon" src={CopyLeftIcon} height="12" alt="copyleft" /> 2024
     </p>
 </footer>
 

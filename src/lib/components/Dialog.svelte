@@ -13,7 +13,7 @@
         margin-bottom: auto;
         margin-left: auto;
 
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         background-color: var(--color-surface-3);
     }
 </style>

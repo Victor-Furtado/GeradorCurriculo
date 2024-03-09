@@ -39,7 +39,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;   
-        border-radius: 8px 8px 0 0;
+        border-radius: var(--border-radius) var(--border-radius) 0 0;
         padding: 0.5rem 1.2rem;
         background-color: var(--color-surface-1);
     }

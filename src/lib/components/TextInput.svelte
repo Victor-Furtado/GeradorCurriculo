@@ -17,7 +17,7 @@
 
 <style>
     .wrapper {
-        border-radius: 8px;
+        border-radius: var(--border-radius);
         margin: 1rem 0;
         padding: 0 1rem;
         background-color: white;
