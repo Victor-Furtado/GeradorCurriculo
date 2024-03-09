@@ -66,6 +66,10 @@
         outline: 4px auto -webkit-focus-ring-color;
     }
 
+    .btn:disabled {
+        cursor: not-allowed;
+    }
+
     .btn:disabled img {
         -webkit-filter: invert() brightness(50%);
         filter: invert() brightness(50%);
