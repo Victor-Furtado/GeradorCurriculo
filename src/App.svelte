@@ -9,6 +9,7 @@
     import ArrInput from "@lib/components/ArrInput.svelte";
 
     import defaultForm from "@lib/forms/default.json";
+    import { download } from "@lib/utils/SaveFileFn";
 
     const form: ISection[] = defaultForm as unknown as ISection[];
     const imgs: Record<string, { default: any }> = import.meta.glob(
@@ -28,6 +29,15 @@
             const [key, value] = field;
             data[key] = value;
         }
+
+        // @ts-ignore
+        switch (e.submitter?.['name']) {
+            case 'export':
+                download(data);
+                break;
+            default:
+                break;
+        }
         console.log(data);
     }
 
@@ -42,13 +52,12 @@
                 {#if input.type?.includes("Array")}
                     <ArrInput
                         inputType={input.type}
+                        inputs={input.conf?.inputs}
                         name={input.name}
                         label={input.label}
                         placeholder={input.conf?.placeholder}
                         icon={imgs[`/src/assets/${input.conf?.icon}`].default}
                     />
-                <!-- {:else if input.type === "textArea"} -->
-                    <!-- <textarea name={input.name} id={input.name} cols="30" rows="10"></textarea> -->
                 {:else}
                     <TextInput
                         name={input.name}
@@ -76,14 +85,13 @@
                 variant="primary">IMPORTAR DADOS</Button
             >
             <Button
-                disabled={true}
+                name="export"
+                type="submit"
                 icon={imgs["/src/assets/exportdoc.icon.svg"].default}
                 variant="warning">EXPORTAR DADOS</Button
             >
             <Button
-                disabled={true}
                 on:click={reset}
-                type="button"
                 icon={imgs["/src/assets/closedoc.icon.svg"].default}
                 variant="danger">LIMPAR CURRÍCULO</Button
             >

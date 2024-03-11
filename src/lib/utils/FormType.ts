@@ -5,6 +5,7 @@ export interface IInput {
     conf?: {
         placeholder: string;
         icon: string;
+        inputs: IInput[];
     };
 }
 

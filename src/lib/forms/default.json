@@ -20,45 +20,97 @@
     {
         "title": "Objetivo",
         "icon": "targetdoc.icon.svg",
-        "inputs": [{
-            "name": "objetivo",
-            "type": "textarea"
-        }]
+        "inputs": [
+            {
+                "name": "objetivo",
+                "type": "textarea"
+            }
+        ]
     },
     {
         "title": "Links de Portifólio",
         "icon": "linkdoc.icon.svg",
-        "inputs": [{
-            "type": "textArray",
-            "name": "links",
-            "label": "portifólio",
-            "conf": {
-                "icon": "linkadd.icon.svg",
-                "placeholder": "http://exemplo.com"
+        "inputs": [
+            {
+                "type": "textArray",
+                "name": "links",
+                "label": "portifólio",
+                "conf": {
+                    "icon": "linkadd.icon.svg",
+                    "placeholder": "http://exemplo.com"
+                }
             }
-        }]
+        ]
     },
     {
         "title": "Competências",
         "icon": "updoc.icon.svg",
-        "inputs": [{
-            "type": "textArray",
-            "name": "competencias",
-            "label": "competência",
-            "conf": {
-                "icon": "staradd.icon.svg",
-                "placeholder": "Marketing Digital"
+        "inputs": [
+            {
+                "type": "textArray",
+                "name": "competencias",
+                "label": "competência",
+                "conf": {
+                    "icon": "staradd.icon.svg",
+                    "placeholder": "Marketing Digital"
+                }
             }
-        }]
+        ]
     },
     {
         "title": "Formação",
         "icon": "ribbondoc.icon.svg",
-        "inputs": []
+        "inputs": [
+            {
+                "type": "multiTextArray",
+                "name": "formacoes",
+                "label": "curso",
+                "conf": {
+                    "icon": "ribbonadd.icon.svg",
+                    "placeholder": "Marketing Digital",
+                    "inputs": [
+                        {
+                            "name": "instituição"
+                        },
+                        {
+                            "name": "descrição",
+                            "type": "textarea"
+                        },
+                        {
+                            "name": "término",
+                            "type": "date"
+                        }
+                    ]
+                }
+            }
+        ]
     },
     {
         "title": "Experiências",
         "icon": "workdoc.icon.svg",
-        "inputs": []
+        "inputs": [
+            {
+                "type": "multiTextArray",
+                "name": "experiencias",
+                "label": "experiência",
+                "conf": {
+                    "icon": "workadd.icon.svg",
+                    "placeholder": "Marketing Digital",
+                    "inputs": [
+                        {
+                            "name": "empresa"
+                        },
+                        {
+                            "name": "descrição",
+                            "type": "textarea"
+                        },
+                        {
+                            "name": "saida",
+                            "type": "date"
+                        }
+                    ]
+                }
+            }
+        ]
     }
 ]

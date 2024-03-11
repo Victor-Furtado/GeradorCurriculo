@@ -2,16 +2,17 @@
     export let icon: string | null = null;
     export let disabled: boolean = false;
     export let type: "button" | "submit" | "reset" | null | undefined =
-        undefined;
+        "button";
     export let variant:
         | "highlight"
         | "primary"
         | "success"
         | "warning"
         | "danger" = "primary";
+    export let name: string | undefined = undefined;
 </script>
 
-<button class="btn {variant}" {type} {disabled} on:click>
+<button class="btn {variant}" {name} {type} {disabled} on:click>
     {#if !!icon}
         <img src={icon} alt={`Ícone de botão`} height="32" class="icon" />
     {/if}
